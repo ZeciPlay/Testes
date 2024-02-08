@@ -78,30 +78,45 @@ local function displayPopup()
     end)
 
     okButton2.MouseButton1Click:Connect(function()
-        _G.Settings = {
-            Players = {
-                ["Ignorar Eu"] = false,
-                ["Ignorar Outros"] = false,
-            },
-            Meshes = {
-                Destruir = false,
-                BaixoDetalhe = true,
-            },
-            Imagens = {
-                Invisivel = true,
-                BaixoDetalhe = true,
-                Destruir = true,
-            },
-            ["Sem Partículas"] = true,
-            ["Sem Efeitos de Câmera"] = true,
-            ["Sem Explosões"] = true, 
-            ["Sem Roupas"] = false, 
-            ["Gráficos de Água Baixos"] = true,
-            ["Sem Sombras"] = true,
-            ["Renderização Baixa"] = true,
-            ["Peças de Baixa Qualidade"] = true,
-        }
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ZeciPlay/MultiOptimize0.1/main/MultiOptimize01.lua"))()
+getgenv().Resolution = {
+    [".gg/scripters"] = 0.50
+}
+
+local Camera = workspace.CurrentCamera
+if getgenv().gg_scripters == nil then
+    game:GetService("RunService").RenderStepped:Connect(
+        function()
+            Camera.CFrame = Camera.CFrame * CFrame.new(0, 0, 0, 1, 0, 0, 0, getgenv().Resolution[".gg/scripters"], 0, 0, 0, 1)
+        end
+    )
+end
+
+getgenv().gg_scripters = "Aori0001"
+
+_G.Settings = {
+    Players = {
+        ["Ignore Me"] = false,
+        ["Ignore Others"] = false,
+    },
+    Meshes = {
+        Destroy = false,
+        LowDetail = true,
+    },
+    Images = {
+        Invisible = true,
+        LowDetail = true,
+        Destroy = true,
+    },
+    ["No Particles"] = true,
+    ["No Camera Effects"] = true,
+    ["No Explosions"] = true, 
+    ["No Clothes"] = false, 
+    ["Low Water Graphics"] = true,
+    ["No Shadows"] = true,
+    ["Low Rendering"] = true,
+    ["Low Quality Parts"] = true,
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ZeciPlay/MultiOptimize0.1/main/MultiOptimize01.lua"))()
     end)
 end
 
