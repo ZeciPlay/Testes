@@ -1,5 +1,5 @@
 local playerName = game.Players.LocalPlayer.Name
-local text = "Welcome, " .. playerName .. "! Press the 'OK' button to execute another script."
+local text = "Bem Vindo, " .. playerName .. "Aproveite:)"
 
 local function displayPopup()
     local popupGui = Instance.new("ScreenGui")
@@ -8,31 +8,21 @@ local function displayPopup()
 
     local popupFrame = Instance.new("Frame")
     popupFrame.Parent = popupGui
-    popupFrame.Size = UDim2.new(0, 250, 0, 100)
-    popupFrame.Position = UDim2.new(0.5, -125, 0.5, -50)
+    popupFrame.Size = UDim2.new(0, 250, 0, 150)
+    popupFrame.Position = UDim2.new(0.5, -125, 0.5, -75)
     popupFrame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
     popupFrame.BorderSizePixel = 2
 
     local textLabel = Instance.new("TextLabel")
     textLabel.Parent = popupFrame
-    textLabel.Size = UDim2.new(1, 0, 1, 0)
-    textLabel.Position = UDim2.new(0, 0, 0, 0)
+    textLabel.Size = UDim2.new(0.9, 0, 0.6, 0)
+    textLabel.Position = UDim2.new(0.05, 0, 0.05, 0)
     textLabel.BackgroundTransparency = 1
     textLabel.Text = text
     textLabel.TextColor3 = Color3.new(1, 1, 1)
     textLabel.Font = Enum.Font.SourceSansBold
     textLabel.TextSize = 18
-
-    local okButton = Instance.new("TextButton")
-    okButton.Parent = popupFrame
-    okButton.Size = UDim2.new(0, 100, 0, 30)
-    okButton.Position = UDim2.new(0.5, -50, 1, -40)
-    okButton.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
-    okButton.BorderSizePixel = 0
-    okButton.Text = "OK"
-    okButton.TextColor3 = Color3.new(1, 1, 1)
-    okButton.Font = Enum.Font.SourceSansBold
-    okButton.TextSize = 18
+    textLabel.TextWrapped = true
 
     local closeButton = Instance.new("TextButton")
     closeButton.Parent = popupFrame
@@ -45,9 +35,35 @@ local function displayPopup()
     closeButton.Font = Enum.Font.SourceSansBold
     closeButton.TextSize = 14
 
-    okButton.MouseButton1Click:Connect(function()
+    closeButton.MouseButton1Click:Connect(function()
+        popupGui:Destroy()
+    end)
+
+    local okButton1 = Instance.new("TextButton")
+    okButton1.Parent = popupFrame
+    okButton1.Size = UDim2.new(0, 100, 0, 30)
+    okButton1.Position = UDim2.new(0.5, -115, 1, -40)
+    okButton1.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+    okButton1.BorderSizePixel = 0
+    okButton1.Text = "Tela esticada"
+    okButton1.TextColor3 = Color3.new(1, 1, 1)
+    okButton1.Font = Enum.Font.SourceSansBold
+    okButton1.TextSize = 18
+
+    local okButton2 = Instance.new("TextButton")
+    okButton2.Parent = popupFrame
+    okButton2.Size = UDim2.new(0, 100, 0, 30)
+    okButton2.Position = UDim2.new(0.5, 15, 1, -40)
+    okButton2.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+    okButton2.BorderSizePixel = 0
+    okButton2.Text = "Sem grafico"
+    okButton2.TextColor3 = Color3.new(1, 1, 1)
+    okButton2.Font = Enum.Font.SourceSansBold
+    okButton2.TextSize = 18
+
+    okButton1.MouseButton1Click:Connect(function()
         getgenv().Resolution = {
-            [".gg/scripters"] = 0.50
+            [".gg/scripters"] = 0.65
         }
 
         local Camera = workspace.CurrentCamera
@@ -60,7 +76,9 @@ local function displayPopup()
         end
 
         getgenv().gg_scripters = "Aori0001"
+    end)
 
+    okButton2.MouseButton1Click:Connect(function()
         _G.Settings = {
             Players = {
                 ["Ignore Me"] = false,
@@ -85,12 +103,11 @@ local function displayPopup()
             ["Low Quality Parts"] = true,
         }
         loadstring(game:HttpGet("https://raw.githubusercontent.com/ZeciPlay/MultiOptimize0.1/main/MultiOptimize01.lua"))()
-        popupGui:Destroy()
-    end)
-
-    closeButton.MouseButton1Click:Connect(function()
-        popupGui:Destroy()
     end)
 end
 
-displayPopup()
+displayPopup().lua"))()
+    end)
+end
+
+displayPopudisplayPopup()
