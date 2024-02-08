@@ -1,5 +1,5 @@
 local playerName = game.Players.LocalPlayer.Name
-local texto = "Bem-vindo, " .. playerName .. "! Aproveite."
+local texto = "Bem-vindo, " .. playerName .. "! Aprovete."
 
 local function displayPopup()
     local popupGui = Instance.new("ScreenGui")
@@ -22,6 +22,21 @@ local function displayPopup()
     textLabel.TextColor3 = Color3.new(1, 1, 1)
     textLabel.Font = Enum.Font.SourceSansBold
     textLabel.TextSize = 18
+
+    local closeButton = Instance.new("TextButton")
+    closeButton.Parent = popupFrame
+    closeButton.Size = UDim2.new(0, 20, 0, 20)
+    closeButton.Position = UDim2.new(1, -25, 0, 5)
+    closeButton.BackgroundColor3 = Color3.new(1, 0, 0)
+    closeButton.BorderSizePixel = 0
+    closeButton.Text = "X"
+    closeButton.TextColor3 = Color3.new(1, 1, 1)
+    closeButton.Font = Enum.Font.SourceSansBold
+    closeButton.TextSize = 14
+
+    closeButton.MouseButton1Click:Connect(function()
+        popupGui:Destroy()
+    end)
 
     local okButton1 = Instance.new("TextButton")
     okButton1.Parent = popupFrame
