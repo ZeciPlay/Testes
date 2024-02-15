@@ -79,7 +79,7 @@ local function displayPopup()
 
     okButton2.MouseButton1Click:Connect(function()
 getgenv().Resolution = {
-    [".gg/scripters"] = 0.50
+    [".gg/scripters"] = 0.65
 }
 
 local Camera = workspace.CurrentCamera
@@ -105,7 +105,7 @@ _G.Settings = {
     Images = {
         Invisible = true,
         LowDetail = true,
-        Destroy = true,
+        Destroy = false,
     },
     ["No Particles"] = true,
     ["No Camera Effects"] = true,
